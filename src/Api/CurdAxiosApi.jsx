@@ -12,7 +12,17 @@ export const getMethod = () => {
     return api.get('/posts')
 }
 
+// delete method
 
+export const deleteMethod = (id) => {
+    return api.delete(`/posts/${id}`)
+}
+
+// post Method
+
+export const postMethod = (ele) => {  // here ele is the item that you want to add
+    return api.post('/posts', ele)
+}
 
 
 

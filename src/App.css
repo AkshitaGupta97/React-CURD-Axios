@@ -16,17 +16,21 @@ button {
   padding: 0.8rem 3.2rem;
   border-radius: 0.3rem;
   cursor: pointer;
+  font-weight: 600;
   border: 0;
-  background-color: yellow;
-  box-shadow: 8px 7px 5px gray;
+  background-color: green;
+  box-shadow: 3px 2px 4px gray;
   letter-spacing: 1.5px;
   text-transform: uppercase;;
   font-size: 16px;
   transition: all 0.5s ease;
   margin-left: 1.2rem;
 }
+.delBtn {
+  background-color: yellow;
+}
 button:hover {
-  background-color: rgb(191, 191, 1);
+  background-color: orange;
 }
 .main-section {
   width: 100%;
@@ -39,15 +43,52 @@ button:hover {
 .section-post {
   width: 90%;
   
-  &ol {
+  & ol {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3.2rem;
 
-    &li {
-      background-color: coral;
+    & li {
+      background-color: rgb(61, 47, 41);
       padding: 1.6rem;
       border-radius: 0.3rem;
+      border-left: 2px solid whitesmoke;
     }
   }
+}
+.section-form {
+  padding: 1.6rem;
+  background-color: gray;
+  border-radius: 0.6rem;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  & input {
+    width: 24rem;
+    color: blue;
+    border: 1px solid wheat;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 980px){
+  .section-form form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .section-post ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+    .section-post ol {
+      grid-template-columns: repeat(1, 1fr);
+    }
 }
