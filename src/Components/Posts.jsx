@@ -5,6 +5,7 @@ import Form from './Form';
 
 function Posts() {
     const [dataItem, setData] = useState([])
+    const [updateData, setUpdate] = useState({})
 
     const getPostData = async () => {
         const res = await getMethod();
@@ -34,10 +35,14 @@ function Posts() {
         }
     }
 
+    const handleEdit = (curEle) => {
+        setUpdate(curEle)
+    }
+
     return (
         <>
            <section className='section-form'>
-                <Form data={dataItem} setData={setData}/>
+                <Form data={dataItem} setData={setData} updateData={updateData} setUpdate={setUpdate}/>
            </section>
 
             <section className='section-post'>
@@ -48,9 +53,11 @@ function Posts() {
                             const { id, body, title } = curEle
                             return (
                                 <li key={id}>
-                                    <h3>{title}</h3>
-                                    <p>{body}</p>
-                                    <button>Edit</button>
+                                    <h3>Title : {title}</h3>
+                                    <p>Body : {body}</p>
+
+                                    <button className='editBtn' onClick={() => handleEdit(curEle)}>Edit</button>
+                                    
                                     <button className='delBtn' onClick={() => handleDelete(id)}>Delete</button>
                                 </li>
                             )

@@ -32,6 +32,10 @@ button {
 button:hover {
   background-color: orange;
 }
+.editBtn {
+  background-color: crimson;
+  color: white;
+}
 .main-section {
   width: 100%;
   height: auto;
